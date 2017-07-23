@@ -1,6 +1,5 @@
 const Constants = {};
 
-
 Constants.ErrorMessages = {
 	"NOT_FOUND": {
 		"code": 404,

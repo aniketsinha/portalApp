@@ -3,7 +3,7 @@ var companyutil = express.Router();
 var Util = require('../utils/util')
 var CacheUtil = require('../utils/cacheutil')
 var Company = require('../classes/company')
-var Constants = require('../classes/constants')
+var Constants = require('../utils/constants')
 
 var companyCache = new CacheUtil();
 

@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var Constants = require('../classes/constants')
+var Constants = require('../utils/constants')
 var Candidate = require('../classes/candidate')
 var Company = require('../classes/company')
 var companyutil = require('../utils/companyutil')

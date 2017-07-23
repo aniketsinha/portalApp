@@ -5,7 +5,7 @@ var Util = require('../utils/util')
 var applicationsutil = require('../utils/applicationsutil')
 var Company = require('../classes/company')
 var JobPost = require('../classes/jobpost')
-var Constants = require('../classes/constants')
+var Constants = require('../utils/constants')
 var Candidate = require('../classes/candidate')
 
 
