@@ -1,0 +1,69 @@
+<h3>Post new job</h3>
+  <form ng-submit="submitForm()">
+    <div class="form-group row">
+      <label for="title-input" class="col-2 col-form-label">Job Title</label>
+      <div class="col-10">
+        <input class="form-control" type="text" ng-model="formData.title" id="title-input">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="company-input" class="col-2 col-form-label">Company</label>
+      <div class="col-10">
+        <select class="custom-select" ng-model="formData.Company" ng-options="company as company.name for company in companies" id="company-input">
+        </select>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="domain-input" class="col-2 col-form-label">Domain</label>
+      <div class="col-10">
+        <input class="form-control" type="text" ng-model="formData.domain" id="domain-input">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="description-input" class="col-2 col-form-label">Description</label>
+      <div class="col-10">
+        <textarea class="form-control" ng-model="formData.description" id="description-input"></textarea>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="keywords-input" class="col-2 col-form-label">Keywords</label>
+      <div class="col-10">
+        <textarea class="form-control" ng-model="formData.keywords" id="keywords-input"></textarea>
+        <p id="passwordHelpBlock" class="form-text text-muted">
+          Separate your keywords by comma. e.g: AngularJS, jQuery, Java, JavaScript
+        </p>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="location-input" class="col-2 col-form-label">Location</label>
+      <div class="col-10">
+        <input class="form-control" type="text" ng-model="formData.location" id="location-input">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="lastdate-input" class="col-2 col-form-label">Last Date</label>
+      <div class="col-10">
+        <input class="form-control" type="date" ng-model="formData.lastDate" id="lastdate-input">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="status-input" class="col-2 col-form-label">Status</label>
+      <div class="col-10">
+        <select class="custom-select" ng-model="formData.status" ng-options="status.id as status.value for status in options.status" id="status-input">
+        </select>
+
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="education-input" class="col-2 col-form-label">Qualifications</label>
+      <div class="col-10">
+        <select multiple class="form-control" id="education-input" ng-model="formData.education" ng-options="education for education in options.education">
+        </select>
+      </div>
+    </div>
+    <div class="form-group row">
+    <div class="col-10 offset-sm-2">
+          <button type="submit" class="btn btn-primary">Submit</button>
+
+    </div>
+</form>

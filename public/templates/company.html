@@ -1,0 +1,15 @@
+<button type="button" class="btn btn-link" ui-sref="jobs" ng-if="showJobsLink">Jobs List</button>
+<div class="card">
+	<div class="card-header">
+		{{company.name}}
+	</div>
+	<div class="card-block">
+		<p class="card-text">{{job.description}}</p>
+		<span class="card-subtitle mb-2 text-muted">Industry</span> {{company.industry}}<br>
+		<span class="card-subtitle mb-2 text-muted">CEO</span> {{company.ceo}}<br>
+		<span class="card-subtitle mb-2 text-muted">Headquarters</span> {{company.headquarter}}<br>
+		<span class="card-subtitle mb-2 text-muted">Founded</span> {{company.founded}}<br>
+		<span class="card-subtitle mb-2 text-muted">Revenue</span> {{company.revenue}}<br>
+		<p class="card-text">{{company.description}}</p>
+	</div>
+</div>

@@ -1,0 +1,14 @@
+<div>
+	<div if-empty="allJobs" message="No Jobs found.">
+		Jobs:
+		<br>
+		<ng-include src="'/templates/jobs.html'"></ng-include>
+	</div>
+	<br>
+	<div if-empty="companies" message="No Companies found.">
+		Companies:
+		<div ng-repeat="company in companies">
+			<ng-include src="'/templates/company.html'"></ng-include>
+		</div>
+	</div>
+</div>

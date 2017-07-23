@@ -1,0 +1,20 @@
+div.alert.text-center.mrg0(role="alert" ng-if="statusMessage.message" ng-class="statusMessage.class" ng-cloak) {{statusMessage.message}}
+
+nav.navbar.navbar-toggleable-md.navbar-light.bg-faded
+  button.navbar-toggler.navbar-toggler-right(type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation")
+    span.navbar-toggler-icon
+  a.navbar-brand(href="#") #{title}
+  div.collapse.navbar-collapse(id="navbarText")
+    ul.navbar-nav.mr-auto
+      li.nav-item
+        a.nav-link(ui-sref="jobs" ui-sref-active="active") View Jobs
+      li.nav-item(ng-cloak)
+        a.nav-link(ui-sref="client" ui-sref-active="active" ng-if="User.role == 2 && isLoggedIn") Post Job
+      li.nav-item(ng-cloak)
+        a.nav-link(ui-sref="applications" ui-sref-active="active" ng-if="User.role == 1 && isLoggedIn") My Applications
+      li.nav-item(ng-cloak)
+        a.nav-link(ui-sref="applications" ui-sref-active="active" ng-if="User.role == 2 && isLoggedIn") All Applications
+    form.form-inline()
+      input.form-control.mr-sm-2(type="text" placeholder="Search" ng-model="search" autocomplete="off")
+      button.btn.btn-outline-success.my-2.my-sm-0(type="submit" ng-click="handleSearch()") Search
+    span.navbar-text.mrglr5(ng-if="isLoggedIn") {{User.name}}

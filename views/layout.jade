@@ -1,0 +1,21 @@
+doctype html
+html(ng-app='portalApp' ng-strict-di)
+  head
+    title= title
+    if isProd
+      include cssprod
+    else
+      link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body(ng-controller="MainController")
+    include nav
+    block content
+    
+    if isProd
+      include frameworkprod
+      script(src="/javascripts/app.min.js")
+
+    else
+      include frameworkdev
+      include jsdev
+      

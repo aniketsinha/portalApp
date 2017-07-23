@@ -1,0 +1,6 @@
+extends layout
+
+block content
+  script.
+    var User = !{JSON.stringify(user)};
+  div.container-fluid(ui-view)

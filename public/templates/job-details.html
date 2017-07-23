@@ -1,0 +1,22 @@
+<div class="jumbotron text-center">
+	<h3 class="display-5 text-center">{{details.title}}</h3>
+	<h4 class="display-6" ui-sref="company({id:details.company.id})">{{details.Company.name}}</h4>
+	<h4 class="display-5"><img src="/images/location.png"> {{details.location}}</h4>
+
+	<a class="btn btn-md btn-success text-center" ng-class="{'disabled': !isLoggedIn || details.applied}" ng-disabled="!isLoggedIn || details.applied" href role="button" ng-click="applyForThisJob()">Apply Online</a>
+</div>
+<div class="row">
+	<div class="col-sm-6 offset-sm-2">
+		<h4 class="display-5">
+			Job Description
+		</h4>
+		{{details.description}}
+	</div>
+	<div class="col-sm-4">
+		<h4 class="display-5">
+			Key Highlights
+		</h4>
+		Industry: {{details.domain}}<br>
+		Qualification: {{details.education.join(", ")}}
+	</div>
+</div>

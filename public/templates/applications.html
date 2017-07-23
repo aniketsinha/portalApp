@@ -1,0 +1,36 @@
+
+<div if-empty="applications" message="No Applications found.">
+	<div  ng-repeat="appln in applications">
+		<!-- Candidate view -->
+		<div class="card" ng-if="User.role == 1">
+		  <div class="card-header">
+		    {{$index+1}}.  {{appln.JobPost.title}} (<a ui-sref="company({'id':appln.JobPost.Company.id})">{{appln.JobPost.Company.name}}</a>, {{appln.JobPost.location}})
+		  </div>
+		  <div class="card-block">
+		    <p class="card-text">{{appln.JobPost.description}}</p>
+
+			<span class="card-subtitle mb-2 text-muted">Applied Date</span> {{appln.appliedDate| date}}<br>
+			<span class="card-subtitle mb-2 text-muted">Viewed By HR</span> {{appln.isViewedByHR}}<br>
+			<span class="card-subtitle mb-2 text-muted">Shortlisted</span> {{appln.isShortlisted}}<br>
+		    <a ui-sref="jobdetails({id:appln.JobPost.id, details:appln.JobPost})" class="card-link">View Job Details</a>
+		  </div>
+		</div>
+		<!-- HR view -->
+		<div class="card" ng-if="User.role == 2">
+		  <div class="card-header">
+		    {{$index+1}}.  Application for: <strong>{{appln.JobPost.title}}</strong> at (<a ui-sref="company({'id':appln.JobPost.Company.id})">{{appln.JobPost.Company.name}}</a>, {{appln.JobPost.location}})
+		  </div>
+		  <div class="card-block">
+		    <p class="card-text">{{appln.User.name}}</p>
+
+			<span class="card-subtitle mb-2 text-muted">Total Experience</span> {{appln.User.totalExperience}}<br>
+			<span class="card-subtitle mb-2 text-muted">Current Company</span> <a ui-sref="company({id:appln.User.currentCompany.id, details:appln.JobPost})" class="card-link">{{appln.User.currentCompany.name}}</a><br>
+			<span class="card-subtitle mb-2 text-muted">Shortlisted</span> {{appln.isShortlisted}}<br>
+			<a href class="btn btn-primary" ng-class="{'disabled': appln.isShortlisted}" ng-disabled="appln.isShortlisted" ng-click="shortlistCandidate(appln)">Shortlist Candidate</a>
+		    <a ui-sref="jobdetails({id:appln.JobPost.id, details:appln.JobPost})" class="card-link">View Job Details</a>
+		  </div>
+		</div>
+	<br>
+	</div>
+
+</div>

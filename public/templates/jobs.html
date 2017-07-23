@@ -1,0 +1,17 @@
+<div if-empty="allJobs" message="No Jobs found.">
+	<div  ng-repeat="job in allJobs">
+		<div class="card">
+		  <div class="card-header">
+		    {{$index+1}}.  {{job.title}} (<a ui-sref="company({'id':job.Company.id})">{{job.Company.name}}</a>, {{job.location}})
+		  </div>
+		  <div class="card-block">
+		    <p class="card-text">{{job.description}}</p>
+		    <footer class="blockquote-footer">Posted by {{job.createdBy.name}}<cite title="Source Title"> on {{job.createdDate|date}} </cite></footer>
+		    <a href class="btn btn-primary" ng-class="{'disabled': !isLoggedIn || job.applied}" ng-click="applyForThisJob(job)" ng-disabled="job.applied || !isLoggedIn">Apply</a>
+		    <a ui-sref="jobdetails({id:job.id, details:job})" class="card-link">Details</a>
+		  </div>
+		</div>
+	<br>
+	</div>
+
+</div>
